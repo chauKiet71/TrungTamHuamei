@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { AlertCircle, User, Lock } from 'lucide-react';
+import { api } from '../../lib/api';
 
 export default function LoginPage() {
   const { login } = useAuth();
@@ -19,23 +20,14 @@ export default function LoginPage() {
     setShake(false);
 
     try {
-      const response = await fetch('/api/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username: usernameInput.trim(), password: passwordInput }),
+      const data = await api.post('/api/auth/login', {
+        username: usernameInput.trim(),
+        password: passwordInput,
       });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.message || 'Đăng nhập không thành công.');
-      }
 
       login(data.token, data.username);
     } catch (err: any) {
-      setErrorMessage(err.message);
+      setErrorMessage(err.message || 'Đăng nhập không thành công.');
       setShake(true);
     } finally {
       setIsSubmitting(false);
