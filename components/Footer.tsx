@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
           <ul className="contact-info">
             <li><Mail size={16} /> huameizhongxin@gmail.com</li>
             <li><Phone size={16} /> 036.913.9381</li>
-            <li><MapPin size={16} /> Số 15, Ngõ 4, Nguyễn Đổng Chi, Cầu Diễn, Nam Từ Liêm, Hà Nội</li>
+            <li><MapPin size={16} /> 36 Lê Thị Hồng, P. Gò Vấp, TP. Hồ Chí Minh</li>
           </ul>
         </div>
         

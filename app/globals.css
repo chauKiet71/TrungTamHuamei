@@ -1282,12 +1282,18 @@ button:disabled {
 }
 
 .accordion-body {
-    max-height: 0;
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
+}
+
+.accordion-item.active .accordion-body {
+    grid-template-rows: 1fr;
 }
 
 .accordion-content {
+    min-height: 0;
     padding-bottom: 1.5rem;
     color: var(--text-muted);
     font-size: 0.95rem;
@@ -1681,6 +1687,7 @@ button:disabled {
 .reviews-slider-viewport {
     overflow: hidden;
     width: 100%;
+    padding: 10px 0px;
 }
 
 .reviews-slider-track {

@@ -178,14 +178,7 @@ export default function HomePage() {
                     <span>{item.q}</span>
                     {openQa === idx ? <Minus className="accordion-icon" size={16} /> : <Plus className="accordion-icon" size={16} />}
                   </button>
-                  <div 
-                    className="accordion-body" 
-                    style={{ 
-                      maxHeight: openQa === idx ? '500px' : '0px', 
-                      overflow: 'hidden', 
-                      transition: 'max-height 0.35s ease' 
-                    }}
-                  >
+                  <div className="accordion-body">
                     <div className="accordion-content">
                       {item.a}
                     </div>

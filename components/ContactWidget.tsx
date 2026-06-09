@@ -37,7 +37,7 @@ export const ContactWidget: React.FC = () => {
           </span>
           <span className="menu-item-text">Gọi Hotline: 036.913.9381</span>
         </a>
-        <a href="https://m.me/huameiedu" target="_blank" rel="noopener noreferrer" className="menu-item messenger-item">
+        <a href="http://m.me/tiengtrunghuamei" target="_blank" rel="noopener noreferrer" className="menu-item messenger-item">
           <span className="menu-icon">
             <MessageCircle size={18} />
           </span>
